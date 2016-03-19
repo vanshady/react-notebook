@@ -25,9 +25,13 @@ function renderCell (cell, i) {
   }
 }
 
-var IPythonNotebook = (props) => (
-  <div className='ipynb'>{props.data.cells.map(renderCell)}</div>
-)
+class IPythonNotebook extends React.Component {
+  render () {
+    return (
+      <div className='ipynb'>{this.props.data.cells.map(renderCell)}</div>
+    )
+  }
+}
 
 IPythonNotebook.propTypes = {
   data: React.PropTypes.object
