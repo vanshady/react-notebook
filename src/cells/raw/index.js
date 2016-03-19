@@ -1,8 +1,6 @@
-'use strict'
+import React from 'react'
 
-var React = require('react')
-
-var RawCell = (props) => (
+const RawCell = (props) => (
   <div className='cell raw_cell'>
   </div>
 )

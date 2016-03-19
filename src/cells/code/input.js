@@ -1,10 +1,8 @@
-'use strict'
-
 import React from 'react'
 import Highlight from 'react-highlight'
 
-var CodeCellInput = (props) => {
-  var source = props.data.source
+const CodeCellInput = (props) => {
+  let source = props.data.source
   if (typeof source === 'string' || source instanceof String) {
     source = [source]
   }

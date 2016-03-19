@@ -1,8 +1,18 @@
 'use strict';
 
-var React = require('react');
-var remark = require('remark');
-var reactRenderer = require('remark-react');
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _remark = require('remark');
+
+var _remark2 = _interopRequireDefault(_remark);
+
+var _remarkReact = require('remark-react');
+
+var _remarkReact2 = _interopRequireDefault(_remarkReact);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var TextCell = function TextCell(props) {
   var source = props.data.source;
@@ -13,20 +23,20 @@ var TextCell = function TextCell(props) {
     return text + line.replace(/^(#{1,6})([^#\s])/, '$1 $2');
   }, '');
 
-  return React.createElement(
+  return _react2.default.createElement(
     'div',
     { className: 'cell text_cell' },
-    React.createElement('div', { className: 'prompt input_prompt' }),
-    React.createElement(
+    _react2.default.createElement('div', { className: 'prompt input_prompt' }),
+    _react2.default.createElement(
       'div',
       { className: 'inner_cell' },
-      remark().use(reactRenderer).process(source)
+      (0, _remark2.default)().use(_remarkReact2.default).process(source)
     )
   );
 };
 
 TextCell.propTypes = {
-  data: React.PropTypes.object
+  data: _react2.default.PropTypes.object
 };
 
 module.exports = TextCell;

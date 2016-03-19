@@ -1,9 +1,7 @@
-'use strict'
-
 import React from 'react'
 
-var TextPlain = (props) => {
-  var lines = props.lines
+const TextPlain = (props) => {
+  let lines = props.lines
   if (typeof lines === 'string' || lines instanceof String) {
     lines = [lines]
   }

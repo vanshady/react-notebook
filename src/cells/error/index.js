@@ -1,8 +1,6 @@
-'use strict'
+import React from 'react'
 
-var React = require('react')
-
-var ErrorCell = (props) => (
+const ErrorCell = (props) => (
   <div className='cell error_cell'>
     {props.message}
   </div>

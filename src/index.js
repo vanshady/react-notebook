@@ -1,16 +1,12 @@
-'use strict'
-
-var React = require('react')
-var TextCell = require('./cells/text')
-var CodeCell = require('./cells/code')
-// var RawCell = require('./cells/raw')
-var ErrorCell = require('./cells/error')
+import React from 'react'
+import TextCell from './cells/text'
+import CodeCell from './cells/code'
+import ErrorCell from './cells/error'
 
 function renderCell (cell, i) {
-  var Cell = {
+  const Cell = {
     markdown: TextCell,
     code: CodeCell
-    // raw: RawCell
   }[cell.cell_type]
 
   if (!Cell) {

@@ -1,5 +1,3 @@
-'use strict'
-
 import React from 'react'
 import ExecuteResult from './execute-result'
 
@@ -16,7 +14,7 @@ function renderOutput (output, i) {
   }
 }
 
-var CodeCellOutputs = (props) => (
+const CodeCellOutputs = (props) => (
   <div className='output_wrapper'>
     {props.outputs.map(renderOutput)}
   </div>

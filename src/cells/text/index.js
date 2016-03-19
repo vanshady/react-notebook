@@ -1,11 +1,9 @@
-'use strict'
+import React from 'react'
+import remark from 'remark'
+import reactRenderer from 'remark-react'
 
-var React = require('react')
-var remark = require('remark')
-var reactRenderer = require('remark-react')
-
-var TextCell = (props) => {
-  var source = props.data.source
+const TextCell = (props) => {
+  let source = props.data.source
   if (typeof source === 'string' || source instanceof String) {
     source = [source]
   }

@@ -1,10 +1,8 @@
-'use strict'
-
 import React from 'react'
 import CodeCellInput from './input'
 import CodeCellOutputs from './outputs'
 
-var CodeCell = (props) => (
+const CodeCell = (props) => (
   <div className='cell code_cell'>
     <CodeCellInput data={props.data}/>
     <CodeCellOutputs outputs={props.data.outputs}/>

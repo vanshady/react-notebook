@@ -1,5 +1,3 @@
-'use strict'
-
 import React from 'react'
 import TextPlain from './text-plain'
 import TextHTML from './text-html'
@@ -14,7 +12,7 @@ function renderData (data, i) {
   }
 }
 
-var ExecuteResult = (props) => (
+const ExecuteResult = (props) => (
   <div className='output' key={props.key}>
     <div className='output_area'>
       <div className='prompt output_prompt'>Out[11]:</div>
