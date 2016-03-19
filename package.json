@@ -1,6 +1,6 @@
 {
   "name": "react-notebook",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "React components for Jupyter Notebook",
   "repository": {
     "type": "git",
@@ -51,10 +51,8 @@
   "dependencies": {
     "highlight.js": "^9.2.0",
     "react-highlight": "^0.7.0",
-    "react-remarkable": "^1.1.1",
     "remark": "^4.1.2",
     "remark-react": "^2.0.0",
-    "remarkable": "^1.6.2",
     "victorica": "0.0.2"
   }
 }
