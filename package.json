@@ -1,6 +1,6 @@
 {
   "name": "react-notebook",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "React components for Jupyter Notebook",
   "repository": {
     "type": "git",
@@ -17,12 +17,13 @@
     "url": "https://github.com/kerwin/react-notebook/issues"
   },
   "homepage": "https://github.com/kerwin/react-notebook#readme",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "lint": "standard src/*.js src/**/*.js test/*.js test/**/*.js",
     "test": "npm run lint && mocha --compilers js:babel-core/register test/*-spec.js test/**/*-spec.js",
     "watch:test": "mocha -wG --compilers js:babel-core/register test/*-spec.js test/**/*-spec.js",
     "watch:lint": "nodemon --exec \"npm run notify-lint\"",
+    "build": "webpack --config ./webpack.config.js",
     "start": "webpack-dev-server --config example/webpack.config.js --content-base example/"
   },
   "devDependencies": {
