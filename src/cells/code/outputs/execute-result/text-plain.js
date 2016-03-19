@@ -2,14 +2,21 @@
 
 import React from 'react'
 
-var TextPlain = (props) => (
-  <div className='output_text output_subarea output_execute_result'>
-    <pre className=''>{props.lines.join('\n')}</pre>
-  </div>
-)
+var TextPlain = (props) => {
+  var lines = props.lines
+  if (typeof lines === 'string' || lines instanceof String) {
+    lines = [lines]
+  }
+
+  return (
+    <div className='output_text output_subarea output_execute_result'>
+      <pre className=''>{lines.join('\n')}</pre>
+    </div>
+  )
+}
 
 TextPlain.propTypes = {
-  lines: React.PropTypes.array
+  lines: React.PropTypes.any
 }
 
 module.exports = TextPlain
