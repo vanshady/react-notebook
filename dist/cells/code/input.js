@@ -11,6 +11,11 @@ var _reactHighlight2 = _interopRequireDefault(_reactHighlight);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var CodeCellInput = function CodeCellInput(props) {
+  var source = props.data.source;
+  if (typeof source === 'string' || source instanceof String) {
+    source = [source];
+  }
+
   return _react2.default.createElement(
     'div',
     { className: 'input' },
@@ -31,7 +36,7 @@ var CodeCellInput = function CodeCellInput(props) {
           _react2.default.createElement(
             _reactHighlight2.default,
             { className: 'python' },
-            props.data.source.join('\n')
+            source.join('\n')
           )
         )
       )

@@ -5,7 +5,11 @@ var remark = require('remark');
 var reactRenderer = require('remark-react');
 
 var TextCell = function TextCell(props) {
-  var source = props.data.source.reduce(function (text, line) {
+  var source = props.data.source;
+  if (typeof source === 'string' || source instanceof String) {
+    source = [source];
+  }
+  source = source.reduce(function (text, line) {
     return text + line.replace(/^(#{1,6})([^#\s])/, '$1 $2');
   }, '');
 
