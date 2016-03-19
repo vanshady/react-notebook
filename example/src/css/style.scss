@@ -1,0 +1,68 @@
+@import './state';
+@import './ipython-notebook-base';
+@import './ipython-notebook-custom';
+@import './color-brewer';
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+body {
+  font-family: "Open sans",verdana,arial,sans-serif;
+  color: #1e4a7b; }
+
+a {
+  color: #265cc3; }
+
+a:visited,
+a:hover {
+  color: #1d3b84; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 300;
+  letter-spacing: -0.25px;
+  color: #0089fe;
+}
+
+.ipynb {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  bottom: 0;
+  padding: 15px;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+form label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: block;
+  height: 50px;
+  line-height: 50px;
+}
+
+form {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  bottom: 0;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+form textarea {
+  font-family: monospace;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  box-sizing: border-box;
+}

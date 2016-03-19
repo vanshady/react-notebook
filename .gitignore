@@ -1,0 +1,8 @@
+node_modules
+example/build/*
+
+npm-debug.log
+.DS_Store
+
+.*.swo
+.*.swp
