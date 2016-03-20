@@ -20,7 +20,7 @@
   "main": "dist/index.js",
   "scripts": {
     "lint": "eslint src example --ext=jsx --ext=js",
-    "test": "npm run lint && mocha --compilers js:babel-core/register test/*-spec.js test/**/*-spec.js",
+    "test": "npm run lint && mocha --compilers css:./test/null-compiler,js:babel-core/register test/*-spec.js test/**/*-spec.js",
     "watch:test": "mocha -wG --compilers js:babel-core/register test/*-spec.js test/**/*-spec.js",
     "build": "babel src --out-dir dist",
     "start": "babel-node example/server.js"

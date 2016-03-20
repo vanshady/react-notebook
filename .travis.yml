@@ -11,4 +11,4 @@ script:
 after_success:
   - echo done
 notifications:
-  - webhooks: https://hooks.pubu.im/services/nee6mqnd84qpcwd
+  webhooks: https://hooks.pubu.im/services/nee6mqnd84qpcwd
