@@ -2,25 +2,44 @@
  "cells": [
   {
    "cell_type": "code",
-   "execution_count": 2,
+   "execution_count": 1,
    "metadata": {
     "collapsed": false,
     "tags": []
    },
    "outputs": [
     {
-     "data": {
-      "text/plain": [
-       "2"
-      ]
-     },
-     "execution_count": 2,
-     "metadata": {},
-     "output_type": "execute_result"
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "hello world\n",
+      "0\n",
+      "1\n",
+      "2\n"
+     ]
+    },
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "output to stderr\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "some more stdout text\n"
+     ]
     }
    ],
    "source": [
-    "1+1"
+    "import sys\n",
+    "print('hello world', flush=True)\n",
+    "for i in range(3):\n",
+    "    print(i, flush=True)\n",
+    "print('output to stderr', file=sys.stderr, flush=True)\n",
+    "print('some more stdout text', flush=True)"
    ]
   },
   {
@@ -153,7 +172,7 @@
    "name": "python",
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython3",
-   "version": "3.5.1"
+   "version": "3.4.4"
   }
  },
  "nbformat": 4,

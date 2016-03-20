@@ -6,11 +6,9 @@ function renderOutput(output, i) {
     case 'execute_result':
       return <ExecuteResult {...output} key={`output-${i}`} />;
     case 'stream':
-      break;
     default:
       return <div key={`output-${i}`} />;
   }
-  return <div />;
 }
 
 const CodeCellOutputs = (props) => (

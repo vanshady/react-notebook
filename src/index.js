@@ -1,6 +1,7 @@
 import React from 'react';
 import TextCell from './cells/text';
 import CodeCell from './cells/code';
+import RawCell from './cells/raw';
 import ErrorCell from './cells/error';
 
 require('./style/base.scss');
@@ -9,6 +10,7 @@ function renderCell(cell, i) {
   const Cell = {
     markdown: TextCell,
     code: CodeCell,
+    raw: RawCell,
   }[cell.cell_type];
 
   if (!Cell) {
