@@ -1,12 +1,10 @@
-'use strict'
-
-var css = require("!style!css!sass!../css/style.scss");
-
 import React from 'react'
 import ReactDOM from 'react-dom'
-import IPythonNotebook from '../../../src'
+import Notebook from '../../../src/index'
 
 import data from './data'
+
+var css = require("!style!css!sass!../css/style.scss");
 
 class App extends React.Component {
   constructor (props) {
@@ -27,10 +25,6 @@ class App extends React.Component {
     if (input.files[0]) this.reader.readAsText(input.files[0])
   }
 
-  handleInputChange (event) {
-    this.setState({data: event.target.value})
-  }
-
   renderNotebook () {
     var json
     try {
@@ -41,7 +35,7 @@ class App extends React.Component {
 
     if (this.state.data && json) {
       return (
-        <IPythonNotebook data={json}/>
+        <Notebook data={json} />
       )
     }
   }
@@ -50,10 +44,9 @@ class App extends React.Component {
     return (
       <form>
         <label htmlFor="ipynb-file">
-          File:
-          <input type="file" name="ipynb-file" ref="ipynb-file" id="ipynb-file" onChange={this.handleFileChange.bind(this)}/>
+        File:
+        <input type="file" name="ipynb-file" ref="ipynb-file" id="ipynb-file" onChange={this.handleFileChange.bind(this)}/>
         </label>
-        <textarea name="ipynb-input" onChange={this.handleInputChange.bind(this)} value={this.state.data}/>
       </form>
     )
   }
@@ -62,10 +55,14 @@ class App extends React.Component {
     return (
       <div>
         { this.renderInputForm() }
+        <hr />
         { this.renderNotebook() }
       </div>
     )
   }
 }
 
-ReactDOM.render(React.createElement(App, {}), document.getElementById('ipynb-reader'))
+ReactDOM.render(
+  React.createElement(App, {}),
+  document.getElementById('root')
+)

@@ -46,16 +46,16 @@ function renderCell(cell, i) {
   }
 }
 
-var IPythonNotebook = function (_React$Component) {
-  _inherits(IPythonNotebook, _React$Component);
+var Notebook = function (_React$Component) {
+  _inherits(Notebook, _React$Component);
 
-  function IPythonNotebook() {
-    _classCallCheck(this, IPythonNotebook);
+  function Notebook() {
+    _classCallCheck(this, Notebook);
 
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(IPythonNotebook).apply(this, arguments));
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(Notebook).apply(this, arguments));
   }
 
-  _createClass(IPythonNotebook, [{
+  _createClass(Notebook, [{
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
@@ -66,11 +66,11 @@ var IPythonNotebook = function (_React$Component) {
     }
   }]);
 
-  return IPythonNotebook;
+  return Notebook;
 }(_react2.default.Component);
 
-IPythonNotebook.propTypes = {
+Notebook.propTypes = {
   data: _react2.default.PropTypes.object
 };
 
-exports.default = IPythonNotebook;
+exports.default = Notebook;
