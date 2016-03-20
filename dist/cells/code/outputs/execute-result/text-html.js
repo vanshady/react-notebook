@@ -1,5 +1,9 @@
 'use strict';
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -19,4 +23,4 @@ TextHTML.propTypes = {
   lines: _react2.default.PropTypes.any
 };
 
-module.exports = TextHTML;
+exports.default = TextHTML;

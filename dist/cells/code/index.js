@@ -1,5 +1,9 @@
 'use strict';
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -27,4 +31,4 @@ CodeCell.propTypes = {
   data: _react2.default.PropTypes.object
 };
 
-module.exports = CodeCell;
+exports.default = CodeCell;

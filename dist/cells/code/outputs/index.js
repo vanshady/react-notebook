@@ -1,5 +1,9 @@
 'use strict';
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _react = require('react');
@@ -21,6 +25,7 @@ function renderOutput(output, i) {
     default:
       return _react2.default.createElement('div', { key: 'output-' + i });
   }
+  return _react2.default.createElement('div', null);
 }
 
 var CodeCellOutputs = function CodeCellOutputs(props) {
@@ -32,7 +37,8 @@ var CodeCellOutputs = function CodeCellOutputs(props) {
 };
 
 CodeCellOutputs.propTypes = {
-  data: _react2.default.PropTypes.object
+  data: _react2.default.PropTypes.object,
+  outputs: _react2.default.PropTypes.array
 };
 
-module.exports = CodeCellOutputs;
+exports.default = CodeCellOutputs;

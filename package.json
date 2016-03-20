@@ -19,11 +19,11 @@
   "homepage": "https://github.com/kerwin/react-notebook#readme",
   "main": "dist/index.js",
   "scripts": {
-    "lint": "eslint src test example --ext=jsx --ext=js",
+    "lint": "eslint src example --ext=jsx --ext=js",
     "test": "npm run lint && mocha --compilers js:babel-core/register test/*-spec.js test/**/*-spec.js",
     "watch:test": "mocha -wG --compilers js:babel-core/register test/*-spec.js test/**/*-spec.js",
     "build": "babel src --out-dir dist",
-    "start": "node example/server.js"
+    "start": "babel-node example/server.js"
   },
   "devDependencies": {
     "babel-cli": "^6.6.5",
@@ -50,6 +50,7 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
+    "node-babel": "^0.1.2",
     "react-highlight": "^0.7.0",
     "remark": "^4.1.2",
     "remark-react": "^2.0.0",

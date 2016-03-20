@@ -1,27 +1,28 @@
-var webpack = require('webpack');
-var WebpackDevServer = require('webpack-dev-server');
-var config = require('../webpack.config');
-var port = 3001;
+import webpack from 'webpack';
+import WebpackDevServer from 'webpack-dev-server';
+import config from '../webpack.config';
 
-var spawn = require('child_process').spawn;
-var notebook = spawn('python', [
+const port = 3001;
+
+const spawn = require('child_process').spawn;
+const notebook = spawn('python', [
   '-m',
   'notebook',
   '--no-browser',
   '--debug',
-  '--NotebookApp.allow_origin="http://localhost:' + port + '"'
+  `--NotebookApp.allow_origin="http://localhost:${port}"`,
 ]);
 
 notebook.stdout.on('data', (data) => {
-  console.log(`stdout: ${data}`);
+  console.log(`stdout: ${data}`);  // eslint-disable-line
 });
 
 notebook.stderr.on('data', (data) => {
-  console.log(`stderr: ${data}`);
+  console.log(`stderr: ${data}`);  // eslint-disable-line
 });
 
 notebook.on('close', (code) => {
-  console.log(`child process exited with code ${code}`);
+  console.log(`child process exited with code ${code}`);  // eslint-disable-line
 });
 
 new WebpackDevServer(webpack(config), {
@@ -34,12 +35,12 @@ new WebpackDevServer(webpack(config), {
     colors: true,
     hash: true,
     timings: true,
-    chunks: false
-  }
-}).listen(port, 'localhost', function (err) {
+    chunks: false,
+  },
+}).listen(port, 'localhost', (err) => {
   if (err) {
-    console.log(err);
+    console.log(err); // eslint-disable-line
   }
 
-  console.log('Webpack dev server is listening at localhost:' + port);
+  console.log(`Webpack dev server is listening at localhost:${port}`);  // eslint-disable-line
 });

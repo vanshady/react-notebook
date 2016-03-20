@@ -1,5 +1,9 @@
 'use strict';
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -14,4 +18,8 @@ var ErrorCell = function ErrorCell(props) {
   );
 };
 
-module.exports = ErrorCell;
+ErrorCell.propTypes = {
+  message: _react2.default.PropTypes.object
+};
+
+exports.default = ErrorCell;

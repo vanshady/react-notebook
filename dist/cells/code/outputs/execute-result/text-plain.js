@@ -1,5 +1,9 @@
 'use strict';
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -17,7 +21,7 @@ var TextPlain = function TextPlain(props) {
     { className: 'output_text output_subarea output_execute_result' },
     _react2.default.createElement(
       'pre',
-      { className: '' },
+      null,
       lines.join('\n')
     )
   );
@@ -27,4 +31,4 @@ TextPlain.propTypes = {
   lines: _react2.default.PropTypes.any
 };
 
-module.exports = TextPlain;
+exports.default = TextPlain;
