@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Notebook from '../../../src/index';
 import sample from '../../sample.ipynb.json';
 
-require('!style!css!sass!../css/style.scss');
+require('../css/style.scss');
 
 class App extends React.Component {
   constructor(props) {
@@ -52,7 +52,9 @@ class App extends React.Component {
       <div>
         { this.renderInputForm() }
         <hr />
-        { this.renderNotebook() }
+        <div className="container">
+          { this.renderNotebook() }
+        </div>
       </div>
     );
   }

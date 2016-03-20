@@ -3,6 +3,8 @@ import TextCell from './cells/text';
 import CodeCell from './cells/code';
 import ErrorCell from './cells/error';
 
+require('./style/base.scss');
+
 function renderCell(cell, i) {
   const Cell = {
     markdown: TextCell,

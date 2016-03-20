@@ -1,39 +1,4 @@
-@import './state';
-@import './ipython-notebook-base';
-@import './ipython-notebook-custom';
-@import './color-brewer';
-
-.ipynb {
+.container {
     margin: 0 auto;
     width: 80%;
-}
-
-form label {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: block;
-    height: 50px;
-    line-height: 50px;
-}
-
-form {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    bottom: 0;
-    padding: 15px;
-    box-sizing: border-box;
-}
-
-form textarea {
-    font-family: monospace;
-    position: absolute;
-    top: 50px;
-    left: 0;
-    width: 100%;
-    bottom: 0;
-    box-sizing: border-box;
 }
