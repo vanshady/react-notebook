@@ -1,14 +1,13 @@
 language: node_js
 node_js:
-- '0.12'
+  - '0.12'
 sudo: false
-env:
-  matrix:
-  - GROUP=
 install:
-- npm install
+  - npm install
 script:
-- npm run lint
-- npm run test
+  - npm run lint
+  - npm run test
 after_success:
-- echo done
+  - echo done
+notifications:
+  - webhooks: https://hooks.pubu.im/services/nee6mqnd84qpcwd

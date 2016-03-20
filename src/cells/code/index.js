@@ -1,16 +1,16 @@
-import React from 'react'
-import CodeCellInput from './input'
-import CodeCellOutputs from './outputs'
+import React from 'react';
+import CodeCellInput from './input';
+import CodeCellOutputs from './outputs';
 
 const CodeCell = (props) => (
-  <div className='cell code_cell'>
-    <CodeCellInput data={props.data}/>
-    <CodeCellOutputs outputs={props.data.outputs}/>
+  <div className={'cell code_cell'}>
+    <CodeCellInput data={props.data} />
+    <CodeCellOutputs outputs={props.data.outputs} />
   </div>
-)
+);
 
 CodeCell.propTypes = {
-  data: React.PropTypes.object
-}
+  data: React.PropTypes.object,
+};
 
-module.exports = CodeCell
+export default CodeCell;

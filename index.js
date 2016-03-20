@@ -1,3 +1,3 @@
-import Notebook from './src'
+import Notebook from './src';
 
-export default Notebook
+export default Notebook;
