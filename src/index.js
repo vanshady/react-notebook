@@ -25,11 +25,12 @@ function renderCell(cell, i) {
 }
 
 const Notebook = (props) => (
-  <div className="ipynb">{props.data.cells.map(renderCell)}</div>
+  <div className="ipynb">{props.content.cells.map(renderCell)}</div>
 );
 
 Notebook.propTypes = {
-  data: React.PropTypes.object,
+  content: React.PropTypes.object,
+  channels: React.PropTypes.object,
 };
 
 export default Notebook;

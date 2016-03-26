@@ -33,7 +33,7 @@ class App extends React.Component {
     }
 
     if (this.state.data && json) {
-      return <Notebook data={json} />;
+      return <Notebook content={json} channels={this.props.channels} />;
     }
 
     return <div />;
@@ -61,10 +61,9 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(
-  React.createElement(App, {}),
-  document.getElementById('root')
-);
+App.propTypes = {
+  channels: React.PropTypes.object,
+};
 
 // Prompt the user for the baseUrl and wsUrl
 const baseUrl = 'http://localhost:8888';
@@ -92,13 +91,9 @@ enchannelBackend.spawn(connectionOptions, 'python3').then(id => {
   const id = args[0];
   const channels = args[1];
   console.info('connected', id, channels); // eslint-disable-line
-  return enchannelBackend.disconnect(channels).then(() => id);
-}).catch(err => {
-  console.error('could not disconnect', err); // eslint-disable-line
-  throw err;
-}).then(id => {
-  return enchannelBackend.shutdown(connectionOptions, id);
-}).catch(err => {
-  console.error('could not shutdown', err); // eslint-disable-line
-  throw err;
+
+  ReactDOM.render(
+    <App channels={channels} />,
+    document.getElementById('root')
+  );
 });
