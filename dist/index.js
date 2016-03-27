@@ -16,6 +16,10 @@ var _code = require('./cells/code');
 
 var _code2 = _interopRequireDefault(_code);
 
+var _raw = require('./cells/raw');
+
+var _raw2 = _interopRequireDefault(_raw);
+
 var _error = require('./cells/error');
 
 var _error2 = _interopRequireDefault(_error);
@@ -27,7 +31,8 @@ require('./style/base.scss');
 function renderCell(cell, i) {
   var Cell = {
     markdown: _text2.default,
-    code: _code2.default
+    code: _code2.default,
+    raw: _raw2.default
   }[cell.cell_type];
 
   if (!Cell) {
@@ -43,12 +48,13 @@ var Notebook = function Notebook(props) {
   return _react2.default.createElement(
     'div',
     { className: 'ipynb' },
-    props.data.cells.map(renderCell)
+    props.content.cells.map(renderCell)
   );
 };
 
 Notebook.propTypes = {
-  data: _react2.default.PropTypes.object
+  content: _react2.default.PropTypes.object,
+  channels: _react2.default.PropTypes.object
 };
 
 exports.default = Notebook;

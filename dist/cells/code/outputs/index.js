@@ -21,11 +21,9 @@ function renderOutput(output, i) {
     case 'execute_result':
       return _react2.default.createElement(_executeResult2.default, _extends({}, output, { key: 'output-' + i }));
     case 'stream':
-      break;
     default:
       return _react2.default.createElement('div', { key: 'output-' + i });
   }
-  return _react2.default.createElement('div', null);
 }
 
 var CodeCellOutputs = function CodeCellOutputs(props) {

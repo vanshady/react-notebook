@@ -13,7 +13,7 @@ describe('IPythonNotebook', () => {
   var output
 
   beforeEach(() => {
-    output = render(<IPythonNotebook data={sampleNotebook}/>)
+    output = render(<IPythonNotebook content={sampleNotebook}/>)
   })
 
   it('generates a notebook component', () => {
