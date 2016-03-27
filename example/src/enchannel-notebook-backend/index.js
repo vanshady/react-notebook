@@ -146,8 +146,6 @@ function _multiplexChannel(wsSubject, channelName) {
   const observable = wsSubject
     .filter(msg => msg.channel === channelName)
     .map(msg => {
-      const _msg = msg;
-      delete _msg.channel;
       return _deepFreeze(msg);
     });
 
