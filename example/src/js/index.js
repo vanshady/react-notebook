@@ -41,7 +41,10 @@ class App extends React.Component {
     this.createFileReader();
     this.handleFileChange = this.handleFileChange.bind(this);
 
-    this.state = { data: JSON.stringify(sample) };
+    this.state = {
+      data: JSON.stringify(sample),
+      channels: this.props.channels,
+    };
     store.subscribe(state => this.setState(state));
   }
   componentDidMount() {

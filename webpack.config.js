@@ -10,6 +10,7 @@ module.exports = {
     filename: '[name].js',
   },
   module: {
+    noParse: [/autoit.js/],
     loaders: [
       { test: /\.js$/, exclude: /(node_modules)/, loader: 'babel' },
       { test: /\.js$/, exclude: /(node_modules)/, loader: 'eslint' },
