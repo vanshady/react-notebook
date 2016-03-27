@@ -26,7 +26,7 @@ notebook.on('close', (code) => {
 });
 
 new WebpackDevServer(webpack(config), {
-  publicPath: '/build/',
+  publicPath: '/',
   contentBase: './example',
   hot: true,
   historyApiFallback: true,

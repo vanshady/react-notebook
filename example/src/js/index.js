@@ -1,22 +1,57 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Notebook from '../../../src/index';
-import sample from '../../sample.ipynb.json';
+import Nteract from '../../../src/nteract/components/notebook';
+import createStore from '../../../src/nteract/store';
+import Provider from '../../../src/nteract/components/util/provider';
+import { setNotebook, setExecutionState } from '../../../src/nteract/actions';
+import { reducers } from '../../../src/nteract/reducers';
 import * as enchannelBackend from '../enchannel-notebook-backend';
+import sample from '../../sample.ipynb.json';
 
 require('../css/style.scss');
+
+const Rx = require('@reactivex/rxjs');
+const { store, dispatch } = createStore({
+  filename: 'test',
+  executionState: 'not connected',
+  notebook: null,
+}, reducers);
+
+store
+.pluck('channels')
+.distinctUntilChanged()
+.switchMap(channels => {
+  if (!channels || !channels.iopub) {
+    return Rx.Observable.of('not connected');
+  }
+  return channels
+  .iopub
+  .ofMessageType('status')
+  .pluck('content', 'execution_state');
+})
+.subscribe(st => {
+  dispatch(setExecutionState(st));
+});
 
 class App extends React.Component {
   constructor(props) {
     super(props);
+
     this.createFileReader();
     this.handleFileChange = this.handleFileChange.bind(this);
+
     this.state = { data: JSON.stringify(sample) };
+    store.subscribe(state => this.setState(state));
+  }
+  componentDidMount() {
+    dispatch(setNotebook(sample));
   }
   createFileReader() {
     this.reader = new FileReader();
     this.reader.addEventListener('loadend', () => {
       this.setState({ data: this.reader.result });
+      dispatch(setNotebook(JSON.parse(this.reader.result)));
     });
   }
   handleFileChange() {
@@ -33,6 +68,26 @@ class App extends React.Component {
     }
 
     if (this.state.data && json) {
+      return (
+        <Provider rx={{ dispatch, store }}>
+          <div>
+            {
+              this.state.err &&
+              <pre>{this.state.err.toString()}</pre>
+            }
+            {
+              this.state.notebook &&
+              <Nteract
+                notebook={this.state.notebook}
+                channels={this.state.channels}
+              />
+            }
+          </div>
+        </Provider>
+      );
+    }
+
+    if (this.state.data === 1) {
       return <Notebook content={json} channels={this.props.channels} />;
     }
 
