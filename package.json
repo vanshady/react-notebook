@@ -70,6 +70,7 @@
     "react-markdown": "^2.1.1",
     "remark": "^4.1.2",
     "remark-react": "^2.0.0",
+    "typings": "^0.7.9",
     "url-loader": "^0.5.7",
     "uuid": "^2.0.1",
     "victorica": "0.0.2"
