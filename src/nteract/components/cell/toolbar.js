@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { executeCell, removeCell } from '../../actions';
+import { executeCell, removeCell } from '../../../actions';
 
 class Toolbar extends React.Component {
   static propTypes = {

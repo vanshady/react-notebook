@@ -18,7 +18,7 @@ var _reactCodeMirror = require('react-code-mirror');
 
 var _reactCodeMirror2 = _interopRequireDefault(_reactCodeMirror);
 
-var _actions = require('../../actions');
+var _actions = require('../../../actions');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 

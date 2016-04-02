@@ -9,7 +9,7 @@ import Immutable from 'immutable';
 
 import {
   executeCell,
-} from '../../actions';
+} from '../../../actions';
 
 const CodeCell = (props, context) => {
   function keyDown(e) {

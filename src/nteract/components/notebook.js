@@ -4,7 +4,7 @@ import HTML5Backend from 'react-dnd-html5-backend';
 
 import DraggableCell from './cell/draggable-cell';
 import CellCreator from './cell/cell-creator';
-import { moveCell } from '../actions';
+import { moveCell } from '../../actions';
 
 import Immutable from 'immutable';
 

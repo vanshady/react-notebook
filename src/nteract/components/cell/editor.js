@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import CodeMirror from 'react-code-mirror';
 
-import { updateCellSource } from '../../actions';
+import { updateCellSource } from '../../../actions';
 
 export default class Editor extends React.Component {
   static propTypes = {

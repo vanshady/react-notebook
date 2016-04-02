@@ -24,7 +24,7 @@ var _cellCreator = require('./cell/cell-creator');
 
 var _cellCreator2 = _interopRequireDefault(_cellCreator);
 
-var _actions = require('../actions');
+var _actions = require('../../actions');
 
 var _immutable = require('immutable');
 

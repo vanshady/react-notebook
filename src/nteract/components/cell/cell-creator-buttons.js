@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { createCellAfter, createCellBefore, createCellAppend } from '../../actions';
+import { createCellAfter, createCellBefore, createCellAppend } from '../../../actions';
 
 export default class CellCreatorButtons extends React.Component {
   static propTypes = {

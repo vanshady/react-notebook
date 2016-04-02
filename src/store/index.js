@@ -6,9 +6,9 @@ export default function createStore(initialState, reducers) {
   const store = subject.scan(
     (state, action) => {
       if (!action || !action.type || ! (action.type in reducers)) {
-        console.error('Action not registered');
-        console.error(action);
-        console.error(action.type);
+        console.error('Action not registered'); // eslint-disable-line
+        console.error(action); // eslint-disable-line
+        console.error(action.type); // eslint-disable-line
         return state; // no reduction
       }
 
@@ -21,7 +21,7 @@ export default function createStore(initialState, reducers) {
   store.subscribe(state => {
     store[stateSymbol] = state;
   }, (err) => {
-    console.error('Error in the store', err);
+    console.error('Error in the store', err); // eslint-disable-line
   });
   store.getState = () => store[stateSymbol];
 
