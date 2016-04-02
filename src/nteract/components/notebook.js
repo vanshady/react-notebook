@@ -8,9 +8,9 @@ import { moveCell } from '../../actions';
 
 import Immutable from 'immutable';
 
-require('../../../node_modules/normalize.css/normalize.css');
-require('../../../node_modules/codemirror/lib/codemirror.css');
-require('../../../node_modules/material-design-icons/iconfont/material-icons.css');
+require('normalize.css/normalize.css');
+require('codemirror/lib/codemirror.css');
+require('material-design-icons/iconfont/material-icons.css');
 require('../styles/cm-composition.css');
 require('../styles/main.css');
 

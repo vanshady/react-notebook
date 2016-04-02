@@ -5,9 +5,9 @@ import createStoreRx from './store';
 import { setNotebook, setExecutionState } from './actions';
 import { reducers } from './reducers';
 
-export function createStore() {
+export function createStore(state) {
   const Rx = require('@reactivex/rxjs');
-  const { store, dispatch } = createStoreRx({
+  const { store, dispatch } = createStoreRx(state || {
     filename: 'test',
     executionState: 'not connected',
     notebook: null,

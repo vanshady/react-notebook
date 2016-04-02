@@ -37,10 +37,10 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-function createStore() {
+function createStore(state) {
   var Rx = require('@reactivex/rxjs');
 
-  var _createStoreRx = (0, _store2.default)({
+  var _createStoreRx = (0, _store2.default)(state || {
     filename: 'test',
     executionState: 'not connected',
     notebook: null
