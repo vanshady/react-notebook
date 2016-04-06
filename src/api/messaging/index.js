@@ -2,7 +2,7 @@
 
 import * as uuid from 'uuid';
 
-const Rx = require('@reactivex/rxjs');
+const Rx = require('rxjs');
 const Observable = Rx.Observable;
 
 const session = uuid.v4();

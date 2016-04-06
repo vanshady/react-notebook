@@ -1,4 +1,4 @@
-const rxjs = require('@reactivex/rxjs');
+const Rx = require('rxjs');
 import { listRunningKernels, connectToKernel, startNewKernel, getKernelSpecs } from 'jupyter-js-services';
 
 /**
@@ -48,7 +48,7 @@ function _stealKernelWebsocket(kernel) {
  * @return {Observable}
  */
 function _wsObservable(ws) {
-  return new rxjs.Observable(subscriber => {
+  return new Rx.Observable(subscriber => {
     ws.onmessage = msg => {
       try {
         subscriber.next(msg);
@@ -79,7 +79,7 @@ function _kernelToSubject(kernel) {
     ws.onopen = resolve;
     ws.onerror = reject;
   })).then(() => {
-    const subscriber = rxjs.Subscriber.create(msg => {
+    const subscriber = Rx.Subscriber.create(msg => {
       ws.send(JSON.stringify(Object.assign({
         idents: [],
         header: {},
@@ -100,7 +100,7 @@ function _kernelToSubject(kernel) {
       .publish()
       .refCount();
 
-    return rxjs.Subject.create(subscriber, observable);
+    return Rx.Subject.create(subscriber, observable);
   });
 }
 
@@ -129,7 +129,7 @@ function _deepFreeze(obj) {
  * @return {Subject}
  */
 function _multiplexChannel(wsSubject, channelName) {
-  const subscriber = rxjs.Subscriber.create(
+  const subscriber = Rx.Subscriber.create(
     msg => {
       wsSubject.next(Object.assign({
         channel: channelName,
@@ -149,7 +149,7 @@ function _multiplexChannel(wsSubject, channelName) {
       return _deepFreeze(msg);
     });
 
-  return rxjs.Subject.create(subscriber, observable);
+  return Rx.Subject.create(subscriber, observable);
 }
 
 /**

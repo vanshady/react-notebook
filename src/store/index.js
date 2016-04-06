@@ -1,4 +1,4 @@
-import * as Rx from '@reactivex/rxjs';
+import Rx from 'rxjs';
 
 export default function createStore(initialState, reducers) {
   const subject = new Rx.Subject();

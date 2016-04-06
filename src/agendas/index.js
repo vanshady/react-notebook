@@ -1,4 +1,4 @@
-const Rx = require('@reactivex/rxjs');
+const Rx = require('rxjs');
 const Immutable = require('immutable');
 
 import {
