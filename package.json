@@ -1,6 +1,6 @@
 {
   "name": "react-notebook",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "React components for Jupyter Notebook",
   "repository": {
     "type": "git",
@@ -44,14 +44,13 @@
     "file-loader": "^0.8.5",
     "json-loader": "^0.5.4",
     "jupyter-js-services": "^0.6.6",
+    "less-loader": "^2.2.3",
     "mocha": "^2.4.5",
     "node-babel": "^0.1.2",
-    "node-sass": "^3.4.2",
     "react": "^0.14.8",
     "react-addons-test-utils": "^0.14.8",
     "react-dom": "^0.14.8",
     "rimraf": "^2.5.2",
-    "sass-loader": "^3.2.0",
     "style-loader": "^0.13.1",
     "typings": "^0.7.11",
     "url-loader": "^0.5.7",

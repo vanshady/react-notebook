@@ -8,12 +8,6 @@ import { moveCell } from '../../actions';
 
 import Immutable from 'immutable';
 
-require('normalize.css/normalize.css');
-require('codemirror/lib/codemirror.css');
-require('material-design-icons/iconfont/material-icons.css');
-require('../styles/cm-composition.css');
-require('../styles/main.css');
-
 class Notebook extends React.Component {
   static propTypes = {
     channels: React.PropTypes.any,

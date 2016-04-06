@@ -19,7 +19,7 @@ module.exports = {
       { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file'},
       { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml'},
       { test: /\.json$/, loaders: ['json'] },
-      { test: /\.scss$/, loaders: ['style', 'css', 'sass'] },
+      { test: /\.less$/, loaders: ['style', 'css', 'less-loader'] },
       { test: /\.css$/, loaders: ['style', 'css'] },
       { test: /\.html$/, loaders: ['file'] },
     ]

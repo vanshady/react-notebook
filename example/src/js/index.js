@@ -5,7 +5,7 @@ import { setNotebook } from '../../../src/actions';
 import * as enchannelBackend from '../enchannel-notebook-backend';
 import sample from '../../sample.ipynb.json';
 
-require('../css/style.scss');
+require('../css/style.css');
 
 class App extends React.Component {
   constructor(props) {

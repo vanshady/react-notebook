@@ -4,8 +4,6 @@ import CodeCell from './cells/code';
 import RawCell from './cells/raw';
 import ErrorCell from './cells/error';
 
-require('./style/base.scss');
-
 function renderCell(cell, i) {
   const Cell = {
     markdown: TextCell,
