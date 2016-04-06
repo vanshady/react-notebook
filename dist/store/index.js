@@ -5,14 +5,14 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = createStore;
 
-var _rxjs = require('@reactivex/rxjs');
+var _rxjs = require('rxjs');
 
-var Rx = _interopRequireWildcard(_rxjs);
+var _rxjs2 = _interopRequireDefault(_rxjs);
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function createStore(initialState, reducers) {
-  var subject = new Rx.Subject();
+  var subject = new _rxjs2.default.Subject();
 
   var store = subject.scan(function (state, action) {
     if (!action || !action.type || !(action.type in reducers)) {

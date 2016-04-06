@@ -10,7 +10,7 @@ var _messaging = require('../api/messaging');
 
 var _actions = require('../actions');
 
-var Rx = require('@reactivex/rxjs');
+var Rx = require('rxjs');
 var Immutable = require('immutable');
 
 function acquireKernelInfo(channels) {

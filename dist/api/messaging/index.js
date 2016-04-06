@@ -15,7 +15,7 @@ var uuid = _interopRequireWildcard(_uuid);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-var Rx = require('@reactivex/rxjs'); /* eslint camelcase: 0 */ // <-- Per Jupyter message spec
+var Rx = require('rxjs'); /* eslint camelcase: 0 */ // <-- Per Jupyter message spec
 
 var Observable = Rx.Observable;
 
