@@ -5,6 +5,10 @@ import { setNotebook } from '../../../src/actions';
 import * as enchannelBackend from '../enchannel-notebook-backend';
 import sample from '../../sample.ipynb.json';
 
+require('normalize.css/normalize.css');
+require('codemirror/lib/codemirror.css');
+require('material-design-icons/iconfont/material-icons.css');
+require('../../../src/nteract/styles/base.less');
 require('../css/style.css');
 
 class App extends React.Component {
