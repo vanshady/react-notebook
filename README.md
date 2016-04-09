@@ -4,17 +4,17 @@
 
 ## Overview
 
-:notebook: It's an React-based interactive notebook. mostly inspried by [nteract](https://github.com/nteract/nteract)
+:notebook: It's an React-based interactive notebook. mostly inspried by [nteract](https://github.com/nteract/nteract).
 
 ## Scope and goals
 
-* Enable html rendering from ipynb file
+* Enable html rendering from ipynb file.
 * Standalone cross-platform from desktop to web application.
 * Store-Dispatch pattern with support multiple UI components.
 
 ### Usage
 
-Install the package via npm
+Install the package via npm.
 
 ```bash
 npm install --save react-notebook
