@@ -1,6 +1,6 @@
 {
   "name": "react-notebook",
-  "version": "0.0.19",
+  "version": "0.1.0",
   "description": "React components for Jupyter Notebook",
   "repository": {
     "type": "git",
