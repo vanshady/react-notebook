@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Notebook, createStore } from '../../../src/';
+import Toolbar from '../../../src/toolbar';
 import { setNotebook } from '../../../src/actions';
 import * as enchannelBackend from '../enchannel-notebook-backend';
 import sample from '../../sample.ipynb.json';
@@ -9,6 +10,8 @@ require('normalize.css/normalize.css');
 require('codemirror/lib/codemirror.css');
 require('material-design-icons/iconfont/material-icons.css');
 require('../../../src/nteract/styles/base.less');
+require('../../../src/jupyter/styles/base.less');
+require('../../../src/toolbar/styles/base.less');
 require('../css/style.css');
 
 class App extends React.Component {
@@ -76,6 +79,19 @@ class App extends React.Component {
 
     if (input.files[0]) this.reader.readAsText(input.files[0]);
   }
+  renderToolbar() {
+    if (this.state.channels) {
+      return (
+        <Toolbar
+          store={this.store}
+          dispatch={this.dispatch}
+          channels={this.state.channels}
+        />
+      );
+    }
+
+    return <div />;
+  }
   renderNotebook(type) {
     if (this.state.channels) {
       return (
@@ -105,6 +121,8 @@ class App extends React.Component {
     return (
       <div>
         { this.renderInputForm() }
+        <hr />
+          { this.renderToolbar() }
         <hr />
         <div className="container-left">
           { this.renderNotebook('jupyter') }
