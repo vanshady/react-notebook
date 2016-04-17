@@ -1,5 +1,6 @@
 import React from 'react';
 import Nteract from './nteract/';
+import Jupyter from './jupyter/';
 import Provider from './util/provider';
 import createStoreRx from './store';
 import { setNotebook, setExecutionState } from './actions';
@@ -66,6 +67,22 @@ export class Notebook extends React.Component {
   render() {
     const dispatch = this.dispatch;
     const store = this.store;
+    const ui = this.props.ui || 'jupyter';
+    let notebook = (
+      <Jupyter
+        notebook={this.state.notebook}
+        channels={this.state.channels}
+      />
+    );
+    if (ui === 'nteract') {
+      notebook = (
+        <Nteract
+          notebook={this.state.notebook}
+          channels={this.state.channels}
+        />
+      );
+    }
+
     return (
       <Provider rx={{ dispatch, store }}>
         <div>
@@ -74,11 +91,7 @@ export class Notebook extends React.Component {
             <pre>{this.state.err.toString()}</pre>
           }
           {
-            this.state.notebook &&
-            <Nteract
-              notebook={this.state.notebook}
-              channels={this.state.channels}
-            />
+            this.state.notebook && notebook
           }
         </div>
       </Provider>
@@ -89,6 +102,7 @@ export class Notebook extends React.Component {
 Notebook.propTypes = {
   content: React.PropTypes.object,
   store: React.PropTypes.object,
+  ui: React.PropTypes.string,
   dispatch: React.PropTypes.func,
   channels: React.PropTypes.object,
 };

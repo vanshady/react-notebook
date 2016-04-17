@@ -1,4 +1,10 @@
-.container {
-    margin: 0 auto;
-    width: 80%;
+.container-left {
+    width: 49%;
+    float: left;
+    border-right: 1px solid #000;
+}
+
+.container-right {
+    width: 49%;
+    float: right;
 }

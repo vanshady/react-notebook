@@ -76,13 +76,14 @@ class App extends React.Component {
 
     if (input.files[0]) this.reader.readAsText(input.files[0]);
   }
-  renderNotebook() {
+  renderNotebook(type) {
     if (this.state.channels) {
       return (
         <Notebook
           store={this.store}
           dispatch={this.dispatch}
           content={sample}
+          ui={type}
           channels={this.state.channels}
         />
       );
@@ -105,8 +106,11 @@ class App extends React.Component {
       <div>
         { this.renderInputForm() }
         <hr />
-        <div className="container">
-          { this.renderNotebook() }
+        <div className="container-left">
+          { this.renderNotebook('jupyter') }
+        </div>
+        <div className="container-right">
+          { this.renderNotebook('nteract') }
         </div>
       </div>
     );

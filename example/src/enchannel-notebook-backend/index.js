@@ -34,12 +34,7 @@ function _getKernelById(connectionOptions, kernelId) {
  * @return {WebSocket}     websocket
  */
 function _stealKernelWebsocket(kernel) {
-  const wsUrl = kernel._ws.url;
-  kernel._ws.onclose = null;
-  kernel._ws.close();
-  kernel.dispose();
-
-  return new WebSocket(wsUrl);
+  return kernel._ws;
 }
 
 /**
